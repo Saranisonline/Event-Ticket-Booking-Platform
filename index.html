@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ticket Booking Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <header class="header">
+        <h1>🎟️ Event Ticket Booking Platform</h1>
+        <nav>
+            <button onclick="showHome()">Home</button>
+            <button onclick="showOrganizer()">Organizer Dashboard</button>
+            <button onclick="showUser()">User Dashboard</button>
+            <button onclick="showFAQ()">FAQ</button>
+            <button onclick="showContact()">Contact</button>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="welcome-banner">
+            <h2>Welcome to the Event Ticket Booking Platform!</h2>
+            <p>Effortlessly organize and book tickets for your favorite events.</p>
+        </div>
+    </section>
+
+    <!-- Organizer Dashboard -->
+    <section id="organizer-dashboard" class="dashboard hidden">
+        <div class="dashboard-container">
+            <h2>Organizer Dashboard</h2>
+            <button class="btn" onclick="openModal()">Add Event</button>
+            <h3>Created Events</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Seats</th>
+                            <th>Remaining Tickets</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="event-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Organizer Form -->
+    <div id="organizer-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Add Event</h3>
+            <form id="event-form">
+                <input type="text" id="event-name" placeholder="Event Name" required />
+                <textarea id="event-desc" placeholder="Event Description" required></textarea>
+                <input type="date" id="event-date" required />
+                <input type="number" id="event-price" placeholder="Ticket Price" required />
+                <input type="number" id="event-seats" placeholder="Available Seats" required />
+                <input type="file" id="event-image" required />
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- User Dashboard -->
+    <section id="user-dashboard" class="dashboard hidden">
+        <div class="dashboard-container">
+            <h2>User Dashboard</h2>
+            <h3>Available Events</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Seats</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-event-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section hidden">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>How do I book tickets?</h4>
+            <p>Navigate to the User Dashboard and select the event you want to book tickets for.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can organizers edit events?</h4>
+            <p>Currently, organizers can only create and delete events. Editing will be added soon!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section hidden">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Event Ticket Booking Platform. Follow us on:</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
